@@ -90,12 +90,12 @@ void ringWander()
     {    
       strip.setPixelColor(i, cyan);
     }
-    strip.setPixelColor((wanderPos - 1) % RING_LEDS, halfWhite);
+    strip.setPixelColor((RING_LEDS + wanderPos - 1) % RING_LEDS, halfWhite);
     strip.setPixelColor(wanderPos, white);
     strip.setPixelColor((wanderPos + 1) % RING_LEDS, halfWhite);
     strip.show();
 
-    delay(500);
+    delay(750);
 
     wanderPos = (wanderPos + 1) % RING_LEDS; 
   }
@@ -135,6 +135,6 @@ void setup()
   strip.begin();
   strip.show();
 
-  //startUp();
+  startUp();
 }
 
